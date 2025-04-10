@@ -1,0 +1,88 @@
+.main-title {
+  font-size: clamp(1.5rem, 4vw, 53px);
+  font-style: normal;
+  font-weight: 700;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.padding {
+  padding-left: clamp(16px, 12.5vw, 240px) !important;
+  padding-right: clamp(16px, 12.5vw, 240px) !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.secondary-color {
+  color: #BDCD5C;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header {
+  padding-top: 112px;
+}
+
+.main-header {
+  background: linear-gradient(254deg, rgba(16, 18, 27, 0.65) 26.67%, rgba(41, 45, 67, 0.35) 98.72%);
+}
+
+.header-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.main-header {
+  height: 100vh;
+}
+
+.nav-link {
+  color: #fff !important; /* Default link color */
+  transition: color 0.3s ease;
+}
+
+.nav-link svg path {
+  fill: #fff !important; /* Default icon color */
+  transition: fill 0.3s ease;
+}
+
+.navbar.scrolled .nav-link {
+  color: #2C3A82 !important; /* Change nav link color when scrolling */
+}
+
+.navbar.scrolled svg path {
+  fill: #2C3A82 !important; /* Default icon color */
+}
+
+section {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+section h2 {
+  color: #2C3A82;
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
