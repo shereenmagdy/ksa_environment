@@ -1,8 +1,9 @@
+// @import 'style';
+
 .accordion-gallery {
     display: flex;
-    height: 400px;
+    height: 75vh;
     overflow: hidden;
-    direction: rtl; // Optional for Arabic layout
     
     .accordion-card {
       flex: 1;
@@ -13,68 +14,186 @@
       cursor: pointer;
       display: flex;
       align-items: flex-end;
+      padding: 30px;
   
       .overlay {
-        background: rgba(0, 0, 0, 0.5);
         color: white;
-        padding: 20px;
-        width: 100%;
-        opacity: 0; // Start with it hidden
-        transform: translateY(20px); // Start with it below the card
-        transition: opacity 0.4s ease, transform 0.4s ease; // Smooth fade-in and slide-up
-  
-        h3 {
-          margin: 0 0 10px;
-          color: #cce234; // Greenish title
-        }
-  
-        p {
-          margin: 0;
-          font-size: 0.9rem;
-        }
+        padding: 30px;
+        // width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0; 
+        visibility: hidden; 
+        transform: translateX(0);
+        transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.3s ease; 
       }
   
       .caption {
-        display: block; // Always visible by default
-        opacity: 1; // Make sure it's fully visible by default
-        transform: translateY(0); // Position it normally
-        transition: opacity 0.4s ease, transform 0.4s ease; // Smooth fade-out and slide-down
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.4s ease, transform 0.4s ease;
       }
 
-      .move-text-container {
-        position: relative;
-        display: inline-block;
-      }
+    //   .move-text-container {
+    //     position: relative;
+    //     display: inline-block;
+    //   }
       
       .move-text {
-        position: absolute;
-        bottom: 0; // Initially place the text at the bottom
-        transition: transform 0.9s ease;
+        position: relative;
+        bottom: 0;
+        color: $secondary-color;
+        font-size: 24px;
+        font-weight: 700;
+        transition: transform 0.5s ease, font-size 0.5s ease, bottom 0.5s ease;
+      }
+
+      
+
+      .more-btn{
+        color: #fff;
+        border-radius: 40px;
+        background:  #A18E77;
+        padding: 0 30px;
       }
   
       &:hover {
         flex: 3;
         
         .overlay {
-          opacity: 1; // Make the overlay visible
-          transform: translateY(0); // Slide it up into place
+            opacity: 1;
+            visibility: visible;
         }
   
         .caption {
-          opacity: 0; // Fade out the caption
-          transform: translateY(20px); // Slide it down
+          opacity: 0; 
+          transform: translateY(20px);
           display: none;
         }
 
         .move-text{
-            transform: translateY(-250px); 
+            position: absolute;
+            transform: translateY(-350px); 
+            font-size: 48px;
+        }
+
+        .move-text::after{
+            content: '';
+            position: absolute;
+            background: #A18E77;
+            height: 120%;
+            width: 4px;
+            top: 0;
+            left: -20px;
         }
       }
+
+      &.active {
+        flex: 3;  // Keep this card expanded by default
+        .overlay {
+          opacity: 1;
+          visibility: visible;
+        }
+        .caption {
+            opacity: 0; 
+            transform: translateY(20px);
+            display: none;
+          }
+  
+          .move-text{
+              position: absolute;
+              transform: translateY(-350px); 
+              font-size: 48px;
+          }
+
+          .move-text::after{
+            content: '';
+            position: absolute;
+            background: #A18E77;
+            height: 120%;
+            width: 4px;
+            top: 0;
+            left: -20px;
+        }
+      }
+  
+      // Other cards shrink when one is hovered (or default active)
+    //   &:not(.active):hover {
+    //     flex: 1;
+    //   }
     }
   
     &:hover .accordion-card:not(:hover) {
       flex: 1;
-      filter: brightness(0.6);
+
+      
+      .caption {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .move-text {
+        position: relative;
+        transform: translateY(-0px);
+        font-size: 24px;
+      }
+
+      .move-text::after{
+        display: none;
+      }
+
+      .overlay {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+      }
     }
+    
+
+
+    .accordion-card:nth-child(1) {
+        background: 
+        linear-gradient(0deg, rgba(22, 33, 85, 0.50),rgba(22, 33, 85, 0.50) 100%),  
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        url('../assets/images/gallery4.png');
+        background-size: cover;
+        background-position: center;
+      }
+    
+      .accordion-card:nth-child(2) {
+        background: 
+        linear-gradient(0deg, rgba(0, 80, 184, 0.4), rgba(0, 80, 184, 0.4) 100%), 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        url('../assets/images/gallery3.png');
+        background-size: cover;
+        background-position: center;
+      }
+    
+      .accordion-card:nth-child(3) {
+        background: 
+        linear-gradient(0deg, rgba(161, 142, 119, 0.40) 0%, rgba(161, 142, 119, 0.40) 100%),
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        url('../assets/images/gallery2.png');
+        background-size: cover;
+        background-position: center;
+      }
+    
+      .accordion-card:nth-child(4) {
+        background: 
+        linear-gradient(0deg, rgba(174, 195, 99, 0.40) 0%, rgba(174, 195, 99, 0.40) 100%), 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        url('../assets/images/gallery1.png');
+        background-size: cover;
+        background-position: center;
+      }
   }
   
