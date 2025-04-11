@@ -1,0 +1,80 @@
+.accordion-gallery {
+    display: flex;
+    height: 400px;
+    overflow: hidden;
+    direction: rtl; // Optional for Arabic layout
+    
+    .accordion-card {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      transition: flex 0.5s ease-in-out;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-end;
+  
+      .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 20px;
+        width: 100%;
+        opacity: 0; // Start with it hidden
+        transform: translateY(20px); // Start with it below the card
+        transition: opacity 0.4s ease, transform 0.4s ease; // Smooth fade-in and slide-up
+  
+        h3 {
+          margin: 0 0 10px;
+          color: #cce234; // Greenish title
+        }
+  
+        p {
+          margin: 0;
+          font-size: 0.9rem;
+        }
+      }
+  
+      .caption {
+        display: block; // Always visible by default
+        opacity: 1; // Make sure it's fully visible by default
+        transform: translateY(0); // Position it normally
+        transition: opacity 0.4s ease, transform 0.4s ease; // Smooth fade-out and slide-down
+      }
+
+      .move-text-container {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .move-text {
+        position: absolute;
+        bottom: 0; // Initially place the text at the bottom
+        transition: transform 0.9s ease;
+      }
+  
+      &:hover {
+        flex: 3;
+        
+        .overlay {
+          opacity: 1; // Make the overlay visible
+          transform: translateY(0); // Slide it up into place
+        }
+  
+        .caption {
+          opacity: 0; // Fade out the caption
+          transform: translateY(20px); // Slide it down
+          display: none;
+        }
+
+        .move-text{
+            transform: translateY(-250px); 
+        }
+      }
+    }
+  
+    &:hover .accordion-card:not(:hover) {
+      flex: 1;
+      filter: brightness(0.6);
+    }
+  }
+  

@@ -4,6 +4,74 @@
   font-weight: 700;
 }
 
+.accordion-gallery {
+  display: flex;
+  height: 400px;
+  overflow: hidden;
+  direction: rtl;
+}
+.accordion-gallery .accordion-card {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.5s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+}
+.accordion-gallery .accordion-card .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.accordion-gallery .accordion-card .overlay h3 {
+  margin: 0 0 10px;
+  color: #cce234;
+}
+.accordion-gallery .accordion-card .overlay p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.accordion-gallery .accordion-card .caption {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.accordion-gallery .accordion-card .move-text-container {
+  position: relative;
+  display: inline-block;
+}
+.accordion-gallery .accordion-card .move-text {
+  position: absolute;
+  bottom: 0;
+  transition: transform 0.9s ease;
+}
+.accordion-gallery .accordion-card:hover {
+  flex: 3;
+}
+.accordion-gallery .accordion-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.accordion-gallery .accordion-card:hover .caption {
+  opacity: 0;
+  transform: translateY(20px);
+  display: none;
+}
+.accordion-gallery .accordion-card:hover .move-text {
+  transform: translateY(-250px);
+}
+.accordion-gallery:hover .accordion-card:not(:hover) {
+  flex: 1;
+  filter: brightness(0.6);
+}
+
 body {
   font-family: "Cairo", sans-serif;
   margin: 0;
