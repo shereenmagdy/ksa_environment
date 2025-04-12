@@ -1,6 +1,6 @@
 $primary-color: #2C3A82;
 $secondary-color: #BDCD5C;
-$padding: 20px;
+$padding: 75px clamp(16px, 12.5vw, 240px);
 $navbar-height: 112px;
 
 // @import "node_modules/bootstrap/scss/bootstrap-rtl";
@@ -60,12 +60,34 @@ a{
 // btns
 .btn{
   min-height: 48px;
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   // border-radius: 16px;
 }
+
+.btn-primary{
+  background: $primary-color;
+  color: #fff;
+  padding: 0 8px;
+  min-height: 28px;
+}
+
+.btn-primary-outline{
+  background: none;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  padding: 0 24px;
+
+  &:hover{
+    background: none;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+}
+
+// nav & header
 
 header{
   padding-top: 112px;
@@ -86,6 +108,22 @@ header{
   height: 100vh;
 }
 
+.scrolled-logo{
+  display: none;
+}
+
+.navbar{
+  background: none;
+}
+
+.navbar-nav{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-link {
   color: #fff !important; /* Default link color */
   transition: color 0.3s ease;
@@ -96,6 +134,10 @@ header{
   transition: fill 0.3s ease;
 }
 
+.navbar.scrolled{
+  background: #fff;
+}
+
 .navbar.scrolled .nav-link {
   color: $primary-color !important; /* Change nav link color when scrolling */
 }
@@ -104,18 +146,25 @@ header{
   fill: $primary-color !important; /* Default icon color */
 }
 
+.navbar.scrolled .main-logo{
+  display: none;
+}
+
+.navbar.scrolled .scrolled-logo{
+  display: block;
+}
+.navbar.scrolled .btn-primary{
+  background: $secondary-color;
+}
+
 
 section {
   padding: $padding;
   border-bottom: 1px solid #eee;
-
-  h2 {
-    color: $primary-color;
-  }
 }
 
-footer {
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: $padding;
+.title{
+  font-size: 48px;
+  font-weight: 500;
+  color: $primary-color;
 }

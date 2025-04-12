@@ -26,11 +26,12 @@
       <img src="assets/images/header-bg.png" alt="" class="img-bg" />
     </div>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-transparent padding
+    <nav class="navbar navbar-expand-lg fixed-top padding
         ">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="assets/images/EF-logo.svg" alt="logo">
+          <img src="assets/images/EF-logo.svg" alt="logo" class="main-logo">
+          <img src="assets/images/EF-logo-blue.svg" alt="logo" class="scrolled-logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +39,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <div class="d-flex flex-column justify-content-center align-items-center">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
               <li class="nav-item">
                 <a class="nav-link btn btn-primary" href="#">منصة الحوافز والمنح</a>
               </li>
@@ -73,7 +74,7 @@
                 </a>
               </div>
             </ul>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
               </li>
@@ -160,6 +161,13 @@
   
   <!-- animation gallery -->
   <section class="padding">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <h1 class="title">برامجنا</h1>
+      <button class="btn btn-primary-outline rounded-pill">
+        <span class="fs-20 fw-500">جميع البرامج</span>
+        <img src="assets/icons/left-blue.svg" alt="left-arrow" class="ms-2">
+      </button>
+    </div>
     <div class="accordion-gallery">
       <div class="accordion-card active">
         <div>
@@ -275,12 +283,21 @@
 
 
   </section>
+  <!-- end of animation gallery -->
 
+  <!-- news section -->
   <section class="news padding pe-0">
+    <div class="d-flex justify-content-between align-items-center mb-5 padding ps-0">
+      <h1 class="title">آخر الأخبار</h1>
+      <button class="btn btn-primary-outline rounded-pill">
+        <span class="fs-20 fw-500">جميع الأخبار</span>
+        <img src="assets/icons/left-blue.svg" alt="left-arrow" class="ms-2">
+      </button>
+    </div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div>
+          <div class="slide-img">
             <img src="assets/images/swip1.png" alt="" class="img-fluid">
           </div>
           <div class="bg-white slide-content">
@@ -296,7 +313,7 @@
           <div class="corner-shape"></div>
         </div>
         <div class="swiper-slide">
-          <div>
+          <div class="slide-img">
             <img src="assets/images/swip2.png" alt="" class="img-fluid">
           </div>
           <div class="bg-white slide-content">
@@ -312,7 +329,7 @@
           <div class="corner-shape"></div>
         </div>
         <div class="swiper-slide">
-          <div>
+          <div class="slide-img">
             <img src="assets/images/swip3.png" alt="" class="img-fluid">
           </div>
           <div class="bg-white slide-content">
@@ -328,7 +345,7 @@
           <div class="corner-shape"></div>
         </div>
         <div class="swiper-slide">
-          <div>
+          <div class="slide-img">
             <img src="assets/images/swip1.png" alt="" class="img-fluid">
           </div>
           <div class="bg-white slide-content">
@@ -344,7 +361,7 @@
           <div class="corner-shape"></div>
         </div>
         <div class="swiper-slide">
-          <div>
+          <div class="slide-img">
             <img src="assets/images/swip2.png" alt="" class="img-fluid">
           </div>
           <div class="bg-white slide-content">
@@ -367,7 +384,7 @@
       <div class="swiper-button-next"></div>
     </div>
   </section>
-
+  <!-- end of news section -->
   <!-- jquery js -->
   <script>
     // script.js
@@ -402,6 +419,24 @@
      var swiper = new Swiper(".mySwiper", {
       slidesPerView: 3.75,
       spaceBetween: 20,
+      breakpoints:{
+        180: {
+          slidesPerView: 1.5,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 1.75,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2.75,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3.75,
+          spaceBetween: 40,
+        },
+      },
       navigation: {
          nextEl: ".swiper-button-next",
          prevEl: ".swiper-button-prev",

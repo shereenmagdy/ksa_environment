@@ -69,6 +69,10 @@
     // transition: transform 0.9s ease;
 }
 
+.slide-img{
+    height: 300px;
+}
+
 .corner-shape {
     position: absolute;
     bottom: 4px;
@@ -112,7 +116,7 @@
 .slide-description{
     opacity: 0;
     transition: opacity 0.5s ease;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     padding: 24px 16px;
 }
 
