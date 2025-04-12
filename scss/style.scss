@@ -4,7 +4,6 @@ $padding: 75px clamp(16px, 12.5vw, 240px);
 $navbar-height: 112px;
 
 // @import "node_modules/bootstrap/scss/bootstrap-rtl";
-@import "header";  
 @import "gallery";
 @import "swiper";
 
@@ -111,6 +110,11 @@ a{
 
 // nav & header
 
+.navbar-brand{
+  width: 255.343px;
+  height: 85.07px;
+}
+
 header{
   padding-top: 112px;
 }
@@ -128,6 +132,12 @@ header{
 
 .main-header{
   height: 100vh;
+}
+
+.main-title{
+  font-size: clamp(1.5rem, 4vw, 53px);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .dropdown-toggle::after{
@@ -224,6 +234,9 @@ header{
   background: $secondary-color;
 }
 
+// .navbar .collapse.show{
+//   background: #fff;
+// }
 
 section {
   padding: $padding;
@@ -231,7 +244,15 @@ section {
 }
 
 .title{
-  font-size: 48px;
+  font-size: clamp(1.5rem, 4vw, 48px);
   font-weight: 500;
   color: $primary-color;
+}
+
+// responsive
+@media screen and (max-width:500px) {
+  .navbar-brand{
+    width: 150px;
+    height: 60px; 
+  }
 }
