@@ -263,13 +263,6 @@
   padding: 24px 16px;
 }
 
-.read-btn {
-  background: #BDCD5C;
-  color: #2C3A82;
-  width: 100%;
-  text-align: center;
-}
-
 .slide-description {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -342,8 +335,12 @@ a {
   color: #BDCD5C;
 }
 
+.fs-12 {
+  font-size: 12px;
+}
+
 .fs-14 {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 .fs-18 {
@@ -373,6 +370,21 @@ a {
   color: #fff;
   padding: 0 8px;
   min-height: 28px;
+}
+.btn-primary:hover {
+  background: #2C3A82;
+  color: #fff;
+}
+
+.secondary-btn {
+  background: #BDCD5C;
+  color: #2C3A82;
+  width: 100%;
+  text-align: center;
+}
+.secondary-btn:hover {
+  background: #BDCD5C;
+  color: #2C3A82;
 }
 
 .btn-primary-outline {
@@ -406,6 +418,10 @@ header {
   height: 100vh;
 }
 
+.dropdown-toggle::after {
+  display: none;
+}
+
 .scrolled-logo {
   display: none;
 }
@@ -423,12 +439,44 @@ header {
 }
 
 .nav-link {
-  color: #fff !important; /* Default link color */
+  color: #fff;
   transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #fff;
+}
+
+.main-nav .nav-item {
+  position: relative;
+}
+.main-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.main-nav .nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: #fff;
 }
 
 .nav-link svg path {
-  fill: #fff !important; /* Default icon color */
+  fill: #fff;
+  transition: fill 0.3s ease;
+}
+
+.nav-link svg circle {
+  stroke: #fff;
   transition: fill 0.3s ease;
 }
 
@@ -437,11 +485,15 @@ header {
 }
 
 .navbar.scrolled .nav-link {
-  color: #2C3A82 !important; /* Change nav link color when scrolling */
+  color: #2C3A82;
 }
 
 .navbar.scrolled svg path {
-  fill: #2C3A82 !important; /* Default icon color */
+  fill: #2C3A82;
+}
+
+.navbar.scrolled svg circle {
+  stroke: #2C3A82;
 }
 
 .navbar.scrolled .main-logo {
