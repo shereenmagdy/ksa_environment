@@ -196,4 +196,14 @@
         background-position: center;
       }
   }
+
+  @media screen and (max-width:992px) {
+    .accordion-gallery{
+      flex-direction: column;
+      height: 1019px;
+    }
+    .accordion-gallery .accordion-card.active .move-text,.accordion-gallery .accordion-card:hover .move-text{
+      font-size: 30px;
+    }
+  }
   
