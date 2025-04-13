@@ -3,8 +3,8 @@
   }
   
   .navbar-nav{
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,6 +41,10 @@
     }
   }
 
+  .items-container{
+    align-items: end;
+  }
+
   .navbar-brand{
     width: 255.343px;
     height: 85.07px;
@@ -71,10 +75,6 @@
   .nav-link svg circle{
     stroke: #fff ; 
     transition: fill 0.3s ease;
-  }
-
-  .navbar-collapse.show {
-    margin-top: 30px;
   }
   
   .navbar.navbar-open {
@@ -130,6 +130,15 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%232C3A82' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
+  @media screen and (max-width:991px) {
+    .navbar-collapse {
+        margin-top: 30px;
+      }
+    
+    .items-container{
+        align-items: center;
+      }
+  }
   @media screen and (max-width:500px) {
     .navbar-brand{
       width: 150px;
