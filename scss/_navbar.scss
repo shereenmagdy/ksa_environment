@@ -1,12 +1,4 @@
-.dropdown-toggle::after{
-    display: none;
-  }
-  
-  .scrolled-logo{
-    display: none;
-  }
-  
-  .navbar{
+.navbar{
     background: none;
   }
   
@@ -49,22 +41,40 @@
     }
   }
 
-.navbar-brand{
+  .navbar-brand{
     width: 255.343px;
     height: 85.07px;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .dropdown-toggle::after{
+    display: none;
+  }
+  
+  .scrolled-logo{
+    display: none;
   }
 
   .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: #fff;
   }
   
-  .navbar-collapse.show {
-    margin-top: 30px;
+  .nav-link svg path{
+    fill: #fff ; 
+    transition: fill 0.3s ease;
   }
   
-  .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
+  .nav-link svg circle{
+    stroke: #fff ; 
+    transition: fill 0.3s ease;
+  }
+
+  .navbar-collapse.show {
+    margin-top: 30px;
   }
   
   .navbar.navbar-open {
@@ -78,16 +88,8 @@
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
-  
-  .nav-link svg path{
-    fill: #fff ; 
-    transition: fill 0.3s ease;
-  }
-  
-  .nav-link svg circle{
-    stroke: #fff ; 
-    transition: fill 0.3s ease;
-  }
+
+  //   on scroll change navbar colors and logo
   
   .navbar.scrolled{
     background: #fff;

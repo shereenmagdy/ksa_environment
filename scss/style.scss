@@ -78,7 +78,8 @@ a{
   padding: 0 8px;
   min-height: 28px;
 
-  &:hover{
+  &:hover,
+  &:focus{
     background: $primary-color;
     color: #fff;
   }
