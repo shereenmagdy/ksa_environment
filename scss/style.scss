@@ -1,9 +1,11 @@
 $primary-color: #2C3A82;
 $secondary-color: #BDCD5C;
 $padding: 75px clamp(16px, 12.5vw, 240px);
+$padding-x: clamp(16px, 12.5vw, 240px);
 $navbar-height: 112px;
 
 // @import "node_modules/bootstrap/scss/bootstrap-rtl";
+@import "navbar";
 @import "gallery";
 @import "swiper";
 
@@ -18,14 +20,14 @@ h1, h2, h3, h4, h5, h6, p{
   margin: 0;
 }
 
-.padding{
-  padding-left: clamp(16px, 12.5vw, 240px) ;
-  padding-right: clamp(16px, 12.5vw, 240px) ;
-}
- 
 a{
   text-decoration: none;
   color: inherit;
+}
+
+.padding{
+  padding-left: $padding-x ;
+  padding-right: $padding-x ;
 }
 
 // colors
@@ -88,7 +90,8 @@ a{
   width: 100%;
   text-align: center;
 
-  &:hover{
+  &:hover,
+  &:focus{
     background: $secondary-color;
     color: $primary-color;
   }
@@ -101,19 +104,15 @@ a{
   border: 1px solid $primary-color;
   padding: 0 24px;
 
-  &:hover{
+  &:hover,
+  &:focus{
     background: none;
     color: $primary-color;
     border: 1px solid $primary-color;
   }
 }
 
-// nav & header
-
-.navbar-brand{
-  width: 255.343px;
-  height: 85.07px;
-}
+// header
 
 header{
   padding-top: 112px;
@@ -140,104 +139,6 @@ header{
   font-weight: 700;
 }
 
-.dropdown-toggle::after{
-  display: none;
-}
-
-.scrolled-logo{
-  display: none;
-}
-
-.navbar{
-  background: none;
-}
-
-.navbar-nav{
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-link {
-  color: #fff ;
-  transition: color 0.3s ease;
-
-  &:hover{
-    color: #fff;
-  }
-}
-
-.main-nav .nav-item{
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-  color: #fff;
-}
-
-
-
-.nav-link svg path{
-  fill: #fff ; 
-  transition: fill 0.3s ease;
-}
-
-.nav-link svg circle{
-  stroke: #fff ; 
-  transition: fill 0.3s ease;
-}
-
-.navbar.scrolled{
-  background: #fff;
-}
-
-.navbar.scrolled .nav-link {
-  color: $primary-color ; 
-}
-
-.navbar.scrolled svg path {
-  fill: $primary-color ; 
-}
-
-.navbar.scrolled svg circle{
-  stroke: $primary-color ; 
-}
-
-.navbar.scrolled .main-logo{
-  display: none;
-}
-
-.navbar.scrolled .scrolled-logo{
-  display: block;
-}
-.navbar.scrolled .btn-primary{
-  background: $secondary-color;
-}
-
-// .navbar .collapse.show{
-//   background: #fff;
-// }
-
 section {
   padding: $padding;
   border-bottom: 1px solid #eee;
@@ -249,10 +150,3 @@ section {
   color: $primary-color;
 }
 
-// responsive
-@media screen and (max-width:500px) {
-  .navbar-brand{
-    width: 150px;
-    height: 60px; 
-  }
-}

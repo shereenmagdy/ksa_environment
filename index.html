@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>One Page Website</title>
+  <title>Environment Fund</title>
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -391,32 +391,40 @@
     </div>
   </section>
   <!-- end of news section -->
-  <!-- jquery js -->
-  <script>
-    // script.js
 
+  <!-- js -->
+   <!-- toggle nav colors -->
+   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const navbar = document.querySelector('nav');
       const navLinks = document.querySelectorAll('.nav-link');
-
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+  
       const headerHeight = document.getElementById('main-header').offsetHeight;
-
+  
+      // Scroll effect on nav links
       window.addEventListener('scroll', () => {
         if (window.scrollY > headerHeight) {
           navbar.classList.add('scrolled');
-          navLinks.forEach(link => {
-            link.classList.add('active'); // Change link color
-          });
         } else {
-          navbar.classList.remove('scrolled'); // Remove 'scrolled' class
-          navLinks.forEach(link => {
-            link.classList.remove('active'); // Reset link color
-          });
+          navbar.classList.remove('scrolled');
         }
       });
+  
+      // Collapse background effect
+      if (navbarCollapse) {
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+          navbar.classList.add('navbar-open');
+        });
+  
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+          navbar.classList.remove('navbar-open');
+        });
+      }
     });
-
   </script>
+    <!-- end of toggle nav colors -->
+
    <!-- Swiper JS -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -453,6 +461,7 @@
        },
      });
    </script>
+
   <!-- bootstrap js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
