@@ -3,6 +3,7 @@
 .accordion-gallery {
   display: flex;
   height: 75vh;
+  max-height: 599px;
   overflow: hidden;
 
   .accordion-card:nth-child(1) {

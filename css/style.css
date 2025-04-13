@@ -142,6 +142,7 @@
 .accordion-gallery {
   display: flex;
   height: 75vh;
+  max-height: 599px;
   overflow: hidden;
 }
 .accordion-gallery .accordion-card:nth-child(1) {
@@ -246,7 +247,7 @@
   display: none;
 }
 .accordion-gallery .accordion-card:hover .move-text {
-  transform: translateY(-350px);
+  transform: translateY(-390px);
   font-size: 48px;
   position: absolute;
 }
@@ -275,7 +276,7 @@
   display: none;
 }
 .accordion-gallery .accordion-card.active .move-text {
-  transform: translateY(-350px);
+  transform: translateY(-390px);
   font-size: 48px;
   position: absolute;
 }
