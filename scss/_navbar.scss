@@ -46,6 +46,7 @@
   .navbar-brand{
     width: 255.343px;
     height: 85.07px;
+    display: flex;
   }
 
   .navbar-toggler:focus {
@@ -144,6 +145,7 @@
         align-items: center;
       }
   }
+
   @media screen and (max-width:500px) {
     .navbar-brand{
       width: 150px;

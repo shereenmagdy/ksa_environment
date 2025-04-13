@@ -43,6 +43,7 @@
 .navbar-brand {
   width: 255.343px;
   height: 85.07px;
+  display: flex;
 }
 
 .navbar-toggler:focus {
@@ -582,6 +583,24 @@ section {
   font-size: clamp(1.5rem, 4vw, 48px);
   font-weight: 500;
   color: #2C3A82;
+}
+
+.quick-acc {
+  position: fixed;
+  width: 48px;
+  height: 465px;
+  padding: 23px 8px 22px 8px;
+  border-radius: 24px;
+  background: rgba(34, 45, 102, 0.7);
+  right: 50px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@media screen and (max-width: 991px) {
+  .quick-acc {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
