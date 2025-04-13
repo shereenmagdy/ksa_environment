@@ -1,0 +1,31 @@
+// src/styles/_mixins.scss
+@mixin expand-card {
+    flex: 3;
+
+    .overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .caption {
+        opacity: 0;
+        transform: translateY(20px);
+        display: none;
+    }
+
+    .move-text {
+        transform: translateY(-350px);
+        font-size: 48px;
+        position: absolute;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: #A18E77;
+            height: 120%;
+            width: 4px;
+            top: 0;
+            left: -20px;
+        }
+    }
+}
